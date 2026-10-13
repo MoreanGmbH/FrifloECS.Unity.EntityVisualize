@@ -10,11 +10,8 @@ This library displays a list of structure [Friflo.Engine.ECS](https://github.com
 ## Installation
 
 ```powershell
-git submodule add https://github.com/MoreanGmbH/Nodus.Maps.git Packages/com.nodus.maps
+git submodule add https://github.com/MoreanGmbH/FrifloECS.Unity.EntityVisualize.git Packages/com.kurobon.friflo_ecs_unity_entity_visualize
 ```
-
-## Package
-> git submodule add https://github.com/MoreanGmbH/FrifloECS.Unity.EntityVisualize.git Packages/com.kurobon.friflo_ecs_unity_entity_visualize
 
 ## Usage 
 
