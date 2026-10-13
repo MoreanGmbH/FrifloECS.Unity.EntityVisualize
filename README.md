@@ -7,8 +7,11 @@ This library displays a list of structure [Friflo.Engine.ECS](https://github.com
 # Dependency
 - [Friflo.Engine.ECS](https://www.nuget.org/packages/Friflo.Engine.ECS/)
 
-## Git Path (Unity Package Manager)
-> https://github.com/kurobon-jp/FrifloECS.Unity.EntityVisualize.git?path=Assets/FrifloECS.Unity.EntityVisualize/
+## Installation
+
+```powershell
+git submodule add https://github.com/MoreanGmbH/Nodus.Maps.git Packages/com.nodus.maps
+```
 
 ## Package
 > git submodule add https://github.com/MoreanGmbH/FrifloECS.Unity.EntityVisualize.git Packages/com.kurobon.friflo_ecs_unity_entity_visualize
