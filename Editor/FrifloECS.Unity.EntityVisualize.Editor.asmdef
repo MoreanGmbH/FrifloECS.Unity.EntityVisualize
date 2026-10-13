@@ -1,0 +1,18 @@
+{
+    "name": "FrifloECS.Unity.EntityVisualize.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b2610a72e7576b24a90bef6cd63158af"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
