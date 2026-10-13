@@ -11,7 +11,7 @@ This library displays a list of structure [Friflo.Engine.ECS](https://github.com
 > https://github.com/kurobon-jp/FrifloECS.Unity.EntityVisualize.git?path=Assets/FrifloECS.Unity.EntityVisualize/
 
 ## Package
-> git submodule add https://github.com/MoreanGmbH/FrifloECS.Unity.EntityVisualize.git Packages/com.frifloecs.entityvisualize
+> git submodule add https://github.com/MoreanGmbH/FrifloECS.Unity.EntityVisualize.git Packages/com.kurobon.friflo_ecs_unity_entity_visualize
 
 ## Usage 
 
