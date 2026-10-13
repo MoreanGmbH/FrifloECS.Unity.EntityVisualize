@@ -10,6 +10,9 @@ This library displays a list of structure [Friflo.Engine.ECS](https://github.com
 ## Git Path (Unity Package Manager)
 > https://github.com/kurobon-jp/FrifloECS.Unity.EntityVisualize.git?path=Assets/FrifloECS.Unity.EntityVisualize/
 
+## Package
+> git submodule add https://github.com/MoreanGmbH/FrifloECS.Unity.EntityVisualize.git Packages/com.frifloecs.entityvisualize
+
 ## Usage 
 
 ### Register EntityStore
