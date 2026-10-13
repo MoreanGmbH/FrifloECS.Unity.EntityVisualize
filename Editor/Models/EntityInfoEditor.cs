@@ -1,4 +1,3 @@
-﻿using System.Collections.Generic;
 using Friflo.Engine.ECS;
 using UnityEditor;
 using UnityEngine;
@@ -7,8 +6,6 @@ namespace FrifloECS.Unity.EntityVisualize.Editor.Models
 {
     public partial class EntityInfo
     {
-        private static readonly Dictionary<ComponentType, bool> ComponentFoldouts = new();
-
         public void OnInspectorGUI()
         {
             var color = 0;
@@ -23,28 +20,20 @@ namespace FrifloECS.Unity.EntityVisualize.Editor.Models
                 {
                     for (var i = 0; i < Components.Count; i++)
                     {
+                        if (i > 0) GUILayout.Space(8);
+
                         var componentInfo = Components[i];
                         var componentType = componentInfo.EntityComponent.Type;
-                        ComponentFoldouts.TryGetValue(componentType, out var foldout);
                         var rect = EditorGUILayout.GetControlRect();
-                        var width = rect.width;
-                        rect.x += 15;
-                        rect.width -= 15;
                         EditorGUI.DrawRect(rect, GetRainbowColor(color++));
-                        rect.x += 5;
-                        rect.width -= 35;
-                        foldout = EditorGUI.Foldout(rect, foldout, componentInfo.ComponentName, true);
-                        ComponentFoldouts[componentType] = foldout;
-                        if (foldout)
-                        {
-                            EditorGUI.indentLevel += 2;
-                            componentInfo.OnInspectorGUI(Entity);
-                            EditorGUI.indentLevel -= 2;
-                        }
 
-                        rect.width = 20;
-                        rect.x = width - 20;
-                        if (GUI.Button(rect, "x", EditorStyles.miniButton))
+                        var labelRect = rect;
+                        labelRect.x += 5;
+                        labelRect.width -= 35;
+                        EditorGUI.LabelField(labelRect, componentInfo.ComponentName, EditorStyles.boldLabel);
+
+                        var removeRect = new Rect(rect.xMax - 20, rect.y, 20, rect.height);
+                        if (GUI.Button(removeRect, "x", EditorStyles.miniButton))
                         {
                             if (componentType.Type == typeof(TreeNode))
                             {
@@ -55,6 +44,17 @@ namespace FrifloECS.Unity.EntityVisualize.Editor.Models
                             }
 
                             EntityUtils.RemoveEntityComponent(Entity, componentType);
+                            continue;
+                        }
+
+                        GUILayout.Space(3);
+                        using (new GUILayout.HorizontalScope())
+                        {
+                            GUILayout.Space(20);
+                            using (new GUILayout.VerticalScope())
+                            {
+                                componentInfo.OnInspectorGUI(Entity);
+                            }
                         }
                     }
                 }
