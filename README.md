@@ -29,4 +29,3 @@ public class Main : MonoBehaviour
 ```
 
 Window -> Friflo.ECS -> Entities Hierarchy<br>
-<img width="800" src="./image.png">
